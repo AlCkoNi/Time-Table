@@ -30,6 +30,7 @@
         {
             groupBox1 = new GroupBox();
             groupBox2 = new GroupBox();
+            groupBox5 = new GroupBox();
             groupBox4 = new GroupBox();
             textBox8 = new TextBox();
             label11 = new Label();
@@ -68,12 +69,22 @@
             // groupBox2
             // 
             groupBox2.BackColor = SystemColors.AppWorkspace;
+            groupBox2.Controls.Add(groupBox5);
             groupBox2.Controls.Add(groupBox4);
             groupBox2.Location = new Point(218, 58);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(1158, 826);
+            groupBox2.Size = new Size(1158, 764);
             groupBox2.TabIndex = 1;
             groupBox2.TabStop = false;
+            // 
+            // groupBox5
+            // 
+            groupBox5.BackColor = Color.White;
+            groupBox5.Location = new Point(16, 380);
+            groupBox5.Name = "groupBox5";
+            groupBox5.Size = new Size(1123, 374);
+            groupBox5.TabIndex = 1;
+            groupBox5.TabStop = false;
             // 
             // groupBox4
             // 
@@ -332,7 +343,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1371, 877);
+            ClientSize = new Size(1383, 824);
             ControlBox = false;
             Controls.Add(groupBox3);
             Controls.Add(groupBox2);
@@ -373,5 +384,6 @@
         private Label label10;
         private TextBox textBox8;
         private Label label11;
+        private GroupBox groupBox5;
     }
 }
