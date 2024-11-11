@@ -164,6 +164,7 @@
             DoubleBuffered = true;
             Name = "Login";
             StartPosition = FormStartPosition.CenterScreen;
+            Load += Login_Load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
