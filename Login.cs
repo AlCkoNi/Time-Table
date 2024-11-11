@@ -37,5 +37,10 @@ namespace CRMStom
             MainMenu mainMenu = new MainMenu();
             mainMenu.Show(this);
         }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
