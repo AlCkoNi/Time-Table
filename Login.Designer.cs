@@ -67,7 +67,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(362, 9);
+            pictureBox1.Location = new Point(332, 36);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(275, 125);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -115,6 +115,7 @@
             textBox2.PasswordChar = '*';
             textBox2.Size = new Size(318, 43);
             textBox2.TabIndex = 5;
+            textBox2.TextChanged += textBox2_TextChanged;
             // 
             // button1
             // 
@@ -133,6 +134,10 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
+            // backgroundWorker1
+            // 
+            backgroundWorker1.DoWork += backgroundWorker1_DoWork;
+            // 
             // label3
             // 
             label3.AutoSize = true;
@@ -143,6 +148,7 @@
             label3.Size = new Size(73, 32);
             label3.TabIndex = 8;
             label3.Text = "Reset";
+            label3.Click += label3_Click;
             // 
             // Login
             // 
