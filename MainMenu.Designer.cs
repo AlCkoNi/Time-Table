@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
             panel3 = new Panel();
             panel5 = new Panel();
             panel4 = new Panel();
@@ -60,14 +59,6 @@
             panel3.SuspendLayout();
             panel4.SuspendLayout();
             SuspendLayout();
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.Blue;
-            panel1.Location = new Point(0, 115);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(77, 686);
-            panel1.TabIndex = 0;
             // 
             // panel3
             // 
@@ -336,7 +327,7 @@
             label12.AutoSize = true;
             label12.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label12.ForeColor = Color.Orange;
-            label12.Location = new Point(142, 19);
+            label12.Location = new Point(185, 26);
             label12.Name = "label12";
             label12.Size = new Size(374, 25);
             label12.TabIndex = 24;
@@ -382,13 +373,15 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ClientSize = new Size(1278, 801);
             ControlBox = false;
             Controls.Add(label12);
             Controls.Add(panel3);
-            Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.Fixed3D;
             Name = "MainMenu";
-            RightToLeft = RightToLeft.Yes;
+            RightToLeft = RightToLeft.No;
+            WindowState = FormWindowState.Maximized;
             Load += MainMenu_Load;
             panel3.ResumeLayout(false);
             panel4.ResumeLayout(false);
@@ -398,8 +391,6 @@
         }
 
         #endregion
-
-        private Panel panel1;
         private Panel panel3;
         private Panel panel5;
         private Panel panel4;
