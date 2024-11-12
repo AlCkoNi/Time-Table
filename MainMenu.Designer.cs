@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel3 = new Panel();
-            panel5 = new Panel();
+            label12 = new Label();
             panel4 = new Panel();
-            textBox8 = new TextBox();
+            textBox9 = new TextBox();
+            label13 = new Label();
+            button3 = new Button();
+            button2 = new Button();
+            button1 = new Button();
             label1 = new Label();
-            label11 = new Label();
             label2 = new Label();
             textBox7 = new TextBox();
             textBox1 = new TextBox();
@@ -49,44 +51,34 @@
             textBox4 = new TextBox();
             label8 = new Label();
             label6 = new Label();
-            dateTimePicker2 = new DateTimePicker();
             dateTimePicker1 = new DateTimePicker();
-            label7 = new Label();
-            label12 = new Label();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            panel3.SuspendLayout();
             panel4.SuspendLayout();
             SuspendLayout();
             // 
-            // panel3
+            // label12
             // 
-            panel3.BackColor = Color.Silver;
-            panel3.Controls.Add(panel5);
-            panel3.Controls.Add(panel4);
-            panel3.Location = new Point(142, 64);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(1135, 737);
-            panel3.TabIndex = 0;
-            // 
-            // panel5
-            // 
-            panel5.BackColor = Color.White;
-            panel5.Location = new Point(13, 343);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(1110, 382);
-            panel5.TabIndex = 1;
+            label12.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label12.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            label12.ForeColor = Color.Orange;
+            label12.Location = new Point(441, 9);
+            label12.Name = "label12";
+            label12.Size = new Size(961, 25);
+            label12.TabIndex = 24;
+            label12.Text = "Система управления здравоохранением";
+            label12.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // panel4
             // 
-            panel4.BackColor = Color.White;
+            panel4.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panel4.BackColor = Color.FromArgb(255, 255, 192);
+            panel4.BorderStyle = BorderStyle.Fixed3D;
+            panel4.Controls.Add(textBox9);
+            panel4.Controls.Add(label13);
             panel4.Controls.Add(button3);
+            panel4.Controls.Add(label12);
             panel4.Controls.Add(button2);
             panel4.Controls.Add(button1);
-            panel4.Controls.Add(textBox8);
             panel4.Controls.Add(label1);
-            panel4.Controls.Add(label11);
             panel4.Controls.Add(label2);
             panel4.Controls.Add(textBox7);
             panel4.Controls.Add(textBox1);
@@ -102,44 +94,87 @@
             panel4.Controls.Add(textBox4);
             panel4.Controls.Add(label8);
             panel4.Controls.Add(label6);
-            panel4.Controls.Add(dateTimePicker2);
             panel4.Controls.Add(dateTimePicker1);
-            panel4.Controls.Add(label7);
-            panel4.Location = new Point(13, 20);
+            panel4.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold);
+            panel4.Location = new Point(-2, -2);
             panel4.Name = "panel4";
-            panel4.Size = new Size(1110, 305);
-            panel4.TabIndex = 0;
+            panel4.Size = new Size(1868, 368);
+            panel4.TabIndex = 25;
+            panel4.Paint += panel4_Paint;
             // 
-            // textBox8
+            // textBox9
             // 
-            textBox8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            textBox8.Location = new Point(857, 89);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(239, 29);
-            textBox8.TabIndex = 43;
+            textBox9.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            textBox9.Location = new Point(1081, 301);
+            textBox9.Name = "textBox9";
+            textBox9.Size = new Size(239, 29);
+            textBox9.TabIndex = 48;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.BackColor = Color.White;
+            label13.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            label13.ForeColor = Color.FromArgb(0, 192, 192);
+            label13.Location = new Point(1103, 262);
+            label13.Name = "label13";
+            label13.Size = new Size(154, 21);
+            label13.TabIndex = 47;
+            label13.Text = "Сумма со скидкой";
+            // 
+            // button3
+            // 
+            button3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            button3.AutoSize = true;
+            button3.BackColor = Color.Orange;
+            button3.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold);
+            button3.ForeColor = Color.White;
+            button3.Location = new Point(1458, 262);
+            button3.Name = "button3";
+            button3.Size = new Size(231, 75);
+            button3.TabIndex = 45;
+            button3.Text = "Удалить";
+            button3.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            button2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            button2.AutoSize = true;
+            button2.BackColor = Color.FromArgb(128, 128, 255);
+            button2.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold);
+            button2.ForeColor = Color.White;
+            button2.Location = new Point(1458, 174);
+            button2.Name = "button2";
+            button2.Size = new Size(231, 75);
+            button2.TabIndex = 44;
+            button2.Text = "Сохранять";
+            button2.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            button1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            button1.AutoSize = true;
+            button1.BackColor = Color.YellowGreen;
+            button1.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(1458, 87);
+            button1.Name = "button1";
+            button1.Size = new Size(231, 75);
+            button1.TabIndex = 25;
+            button1.Text = "Редактировать";
+            button1.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label1.ForeColor = Color.Orange;
-            label1.Location = new Point(17, 15);
+            label1.Location = new Point(12, 46);
             label1.Name = "label1";
             label1.Size = new Size(217, 25);
             label1.TabIndex = 23;
             label1.Text = "Управлять пациентами";
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.BackColor = Color.White;
-            label11.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            label11.ForeColor = Color.FromArgb(0, 192, 192);
-            label11.Location = new Point(868, 55);
-            label11.Name = "label11";
-            label11.Size = new Size(154, 21);
-            label11.TabIndex = 42;
-            label11.Text = "Сумма со скидкой";
             // 
             // label2
             // 
@@ -147,7 +182,7 @@
             label2.BackColor = Color.White;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label2.ForeColor = Color.FromArgb(0, 192, 192);
-            label2.Location = new Point(312, 225);
+            label2.Location = new Point(545, 172);
             label2.Name = "label2";
             label2.Size = new Size(187, 21);
             label2.TabIndex = 24;
@@ -156,7 +191,7 @@
             // textBox7
             // 
             textBox7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            textBox7.Location = new Point(579, 259);
+            textBox7.Location = new Point(1081, 209);
             textBox7.Name = "textBox7";
             textBox7.Size = new Size(239, 29);
             textBox7.TabIndex = 41;
@@ -164,7 +199,7 @@
             // textBox1
             // 
             textBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            textBox1.Location = new Point(301, 259);
+            textBox1.Location = new Point(534, 211);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(239, 29);
             textBox1.TabIndex = 25;
@@ -175,7 +210,7 @@
             label10.BackColor = Color.White;
             label10.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label10.ForeColor = Color.FromArgb(0, 192, 192);
-            label10.Location = new Point(590, 225);
+            label10.Location = new Point(1103, 172);
             label10.Name = "label10";
             label10.Size = new Size(194, 21);
             label10.TabIndex = 40;
@@ -187,7 +222,7 @@
             label3.BackColor = Color.White;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label3.ForeColor = Color.FromArgb(0, 192, 192);
-            label3.Location = new Point(28, 140);
+            label3.Location = new Point(38, 87);
             label3.Name = "label3";
             label3.Size = new Size(77, 21);
             label3.TabIndex = 26;
@@ -196,7 +231,7 @@
             // textBox6
             // 
             textBox6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            textBox6.Location = new Point(579, 174);
+            textBox6.Location = new Point(1081, 123);
             textBox6.Name = "textBox6";
             textBox6.Size = new Size(239, 29);
             textBox6.TabIndex = 39;
@@ -204,7 +239,7 @@
             // textBox2
             // 
             textBox2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            textBox2.Location = new Point(17, 174);
+            textBox2.Location = new Point(27, 123);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(239, 29);
             textBox2.TabIndex = 27;
@@ -215,7 +250,7 @@
             label9.BackColor = Color.White;
             label9.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label9.ForeColor = Color.FromArgb(0, 192, 192);
-            label9.Location = new Point(590, 140);
+            label9.Location = new Point(1103, 87);
             label9.Name = "label9";
             label9.Size = new Size(150, 21);
             label9.TabIndex = 38;
@@ -227,7 +262,7 @@
             label4.BackColor = Color.White;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label4.ForeColor = Color.FromArgb(0, 192, 192);
-            label4.Location = new Point(312, 140);
+            label4.Location = new Point(545, 87);
             label4.Name = "label4";
             label4.Size = new Size(149, 21);
             label4.TabIndex = 28;
@@ -236,7 +271,7 @@
             // textBox5
             // 
             textBox5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            textBox5.Location = new Point(579, 89);
+            textBox5.Location = new Point(534, 301);
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(239, 29);
             textBox5.TabIndex = 37;
@@ -244,10 +279,11 @@
             // textBox3
             // 
             textBox3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            textBox3.Location = new Point(301, 174);
+            textBox3.Location = new Point(534, 123);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(239, 29);
             textBox3.TabIndex = 29;
+            textBox3.TextChanged += textBox3_TextChanged;
             // 
             // label5
             // 
@@ -255,7 +291,7 @@
             label5.BackColor = Color.White;
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label5.ForeColor = Color.FromArgb(0, 192, 192);
-            label5.Location = new Point(590, 55);
+            label5.Location = new Point(545, 262);
             label5.Name = "label5";
             label5.Size = new Size(67, 21);
             label5.TabIndex = 36;
@@ -264,7 +300,7 @@
             // textBox4
             // 
             textBox4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            textBox4.Location = new Point(301, 89);
+            textBox4.Location = new Point(27, 301);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(239, 29);
             textBox4.TabIndex = 30;
@@ -275,11 +311,12 @@
             label8.BackColor = Color.White;
             label8.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label8.ForeColor = Color.FromArgb(0, 192, 192);
-            label8.Location = new Point(312, 55);
+            label8.Location = new Point(38, 262);
             label8.Name = "label8";
             label8.Size = new Size(92, 21);
             label8.TabIndex = 35;
             label8.Text = "Тел номер";
+            label8.Click += label8_Click;
             // 
             // label6
             // 
@@ -287,116 +324,50 @@
             label6.BackColor = Color.White;
             label6.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label6.ForeColor = Color.FromArgb(0, 192, 192);
-            label6.Location = new Point(28, 234);
+            label6.Location = new Point(38, 172);
             label6.Name = "label6";
             label6.Size = new Size(123, 21);
             label6.TabIndex = 31;
             label6.Text = "Год рождения";
             // 
-            // dateTimePicker2
-            // 
-            dateTimePicker2.CalendarFont = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            dateTimePicker2.Location = new Point(17, 91);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(239, 23);
-            dateTimePicker2.TabIndex = 34;
-            // 
             // dateTimePicker1
             // 
             dateTimePicker1.CalendarFont = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
             dateTimePicker1.CalendarMonthBackground = Color.White;
-            dateTimePicker1.Location = new Point(17, 270);
+            dateTimePicker1.Font = new Font("Segoe UI", 11F);
+            dateTimePicker1.Location = new Point(27, 211);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(239, 23);
+            dateTimePicker1.Size = new Size(239, 27);
             dateTimePicker1.TabIndex = 32;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.BackColor = Color.White;
-            label7.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            label7.ForeColor = Color.FromArgb(0, 192, 192);
-            label7.Location = new Point(28, 55);
-            label7.Name = "label7";
-            label7.Size = new Size(114, 21);
-            label7.TabIndex = 33;
-            label7.Text = "День приёма";
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            label12.ForeColor = Color.Orange;
-            label12.Location = new Point(185, 26);
-            label12.Name = "label12";
-            label12.Size = new Size(374, 25);
-            label12.TabIndex = 24;
-            label12.Text = "Система управления здравоохранением";
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.YellowGreen;
-            button1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(879, 131);
-            button1.Name = "button1";
-            button1.Size = new Size(181, 39);
-            button1.TabIndex = 25;
-            button1.Text = "Редактировать";
-            button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.FromArgb(128, 128, 255);
-            button2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(879, 176);
-            button2.Name = "button2";
-            button2.Size = new Size(181, 39);
-            button2.TabIndex = 44;
-            button2.Text = "Сохранять";
-            button2.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            button3.BackColor = Color.Orange;
-            button3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            button3.ForeColor = Color.White;
-            button3.Location = new Point(879, 221);
-            button3.Name = "button3";
-            button3.Size = new Size(181, 39);
-            button3.TabIndex = 45;
-            button3.Text = "Удалить";
-            button3.UseVisualStyleBackColor = false;
             // 
             // MainMenu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            ClientSize = new Size(1278, 801);
+            BackColor = Color.FromArgb(224, 224, 224);
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(1862, 920);
             ControlBox = false;
-            Controls.Add(label12);
-            Controls.Add(panel3);
+            Controls.Add(panel4);
             FormBorderStyle = FormBorderStyle.Fixed3D;
             Name = "MainMenu";
             RightToLeft = RightToLeft.No;
+            StartPosition = FormStartPosition.CenterScreen;
             WindowState = FormWindowState.Maximized;
             Load += MainMenu_Load;
-            panel3.ResumeLayout(false);
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-        private Panel panel3;
-        private Panel panel5;
+        private Label label12;
         private Panel panel4;
-        private TextBox textBox8;
+        private Button button3;
+        private Button button2;
+        private Button button1;
         private Label label1;
-        private Label label11;
         private Label label2;
         private TextBox textBox7;
         private TextBox textBox1;
@@ -412,12 +383,8 @@
         private TextBox textBox4;
         private Label label8;
         private Label label6;
-        private DateTimePicker dateTimePicker2;
         private DateTimePicker dateTimePicker1;
-        private Label label7;
-        private Label label12;
-        private Button button1;
-        private Button button3;
-        private Button button2;
+        private TextBox textBox9;
+        private Label label13;
     }
 }
