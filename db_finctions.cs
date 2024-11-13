@@ -7,58 +7,135 @@ using System.Text;
 using System.Threading.Tasks;
 using static System.Console;
 using CRMStom;
+using Microsoft.VisualBasic.Logging;
 
 namespace Time_Table
 {
     internal class db_finctions
     {
-        private string db_connect = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\AlCkoNi\\source\\repos\\Time-Table\\db.mdf;Integrated Security=True";
+        private readonly string db_connect = @"Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\AlCkoNi\\source\\repos\\Time-Table\\db.mdf;Integrated Security=True";
 
-        /*public void chekemploy(string login, string paswd)
+        public void chekemploy(string login, string paswd)
         {
-            string sql = "INSERT INTO users (user_id, login, passwd, role, sysin) VALUES (@user_id, @login, @passwd, @role, @sysin)";
+            string sql = "";
             using (SqlConnection connection = new SqlConnection(db_connect))
             {
                 connection.Open();
-                using (SqlCommand getMaxIdCommand = new SqlCommand("SELECT MAX(user_id) FROM users", connection))
+                using (SqlCommand getMaxIdCommand = new SqlCommand("", connection))
                 {
                     object result = getMaxIdCommand.ExecuteScalar();
-                    if (result != DBNull.Value)
-                    {
-                        id = Convert.ToInt32(result) + 1;
-                    }
                 }
                 using (SqlCommand command = new SqlCommand(sql, connection))
                 {
-                    command.Parameters.AddWithValue("@user_id", id);
                     command.Parameters.AddWithValue("@login", login);
-                    command.Parameters.AddWithValue("@passwd", passw);
-                    command.Parameters.AddWithValue("@role", role);
-                    command.Parameters.AddWithValue("@sysin", b);
-                    int rowsAffected = command.ExecuteNonQuery();
+                    command.Parameters.AddWithValue("@passwd", paswd);
                 }
             }
         }
-        public void purpose2(string name, string pass)//log-in
+        public void add_to_bd_users(string name, string date_of_birth, int tel_number, string tashxis, decimal discount, string info, string total_amount)
         {
-            string sqlSelect = @"SELECT role FROM users WHERE login = @login AND passwd = @passwd;";
-            using (SqlConnection connection = new SqlConnection(db_connect))
+
+        }
+    }
+    /*
+    ExecuteScalar: возвращает один результат (например, MAX(ID)).
+    ExecuteNonQuery: используется для вставки, обновления или удаления данных и возвращает количество затронутых строк.
+    ExecuteReader: используется для выборки данных и возвращает список строк, где каждая строка представлена словарем с ключами-именами полей и значениями данных.
+    */
+    public class DatabaseHelper
+    {
+        private readonly string _connectionString;
+
+        public DatabaseHelper(string connectionString)
+        {
+            _connectionString = connectionString;
+        }
+
+        public object ExecuteScalar(string query, Dictionary<string, object> parameters = null)
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
             {
                 connection.Open();
-                using (SqlCommand command = new SqlCommand(sqlSelect, connection))
+                using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@login", login);
-                    command.Parameters.AddWithValue("@passwd", passw);
-                    string role = (string)(command.ExecuteScalar());
-                    choise(role);
-                    switch (role)
+                    AddParameters(command, parameters);
+                    return command.ExecuteScalar();
+                }
+            }
+        }
+
+        public int ExecuteNonQuery(string query, Dictionary<string, object> parameters = null)
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    AddParameters(command, parameters);
+                    return command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public List<Dictionary<string, object>> ExecuteReader(string query, Dictionary<string, object> parameters = null)
+        {
+            var results = new List<Dictionary<string, object>>();
+
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    AddParameters(command, parameters);
+                    using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        case "admin": admin_Menu.menu(); break;
-                        case "employ": employ_Menu.menu(); break;
-                        case "user": user_Menu.menu(); break;
+                        while (reader.Read())
+                        {
+                            var row = new Dictionary<string, object>();
+                            for (int i = 0; i < reader.FieldCount; i++)
+                            {
+                                row[reader.GetName(i)] = reader.GetValue(i);
+                            }
+                            results.Add(row);
+                        }
                     }
                 }
             }
-        }*/
+            return results;
+        }
+
+        private void AddParameters(SqlCommand command, Dictionary<string, object> parameters)
+        {
+            if (parameters != null)
+            {
+                foreach (var param in parameters)
+                {
+                    command.Parameters.AddWithValue(param.Key, param.Value ?? DBNull.Value);
+                }
+            }
+        }
     }
+    //Вставка данных:
+    var dbHelper = new DatabaseHelper(connectionString);
+    string insertQuery = "INSERT INTO Users (login, passwd) VALUES (@login, @passwd)";
+    var parameters = new Dictionary<string, object> { { "@login", login }, { "@passwd", passwd } };
+    dbHelper.ExecuteNonQuery(insertQuery, parameters);
+    //Обновление данных: 
+    string updateQuery = "UPDATE Users SET passwd = @newPasswd WHERE login = @login";
+    var updateParams = new Dictionary<string, object> { { "@newPasswd", newPasswd }, { "@login", login } };
+    dbHelper.ExecuteNonQuery(updateQuery, updateParams);
+    //Удаление данных:
+    string deleteQuery = "DELETE FROM Users WHERE login = @login";
+    var deleteParams = new Dictionary<string, object> { { "@login", login } };
+    dbHelper.ExecuteNonQuery(deleteQuery, deleteParams);
+    //Получение данных:
+    string selectQuery = "SELECT * FROM Users WHERE login = @login";
+    var selectParams = new Dictionary<string, object> { { "@login", login } };
+    var users = dbHelper.ExecuteReader(selectQuery, selectParams);
+    foreach (var user in users)
+    {
+        Console.WriteLine($"Login: {user["login"]}, Password: {user["passwd"]}");
+    }
+
+
 }
