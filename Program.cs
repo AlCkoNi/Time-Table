@@ -11,7 +11,7 @@ namespace Time_Table
         static void Main()
         {
             ApplicationConfiguration.Initialize();
-            Application.Run(new MainMenu());
+            Application.Run(new StartPage());
         }
     }
 }

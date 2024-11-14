@@ -15,7 +15,7 @@ namespace Time_Table
     {
         private readonly string db_connect = @"Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\AlCkoNi\\source\\repos\\Time-Table\\db.mdf;Integrated Security=True";
 
-        public void chekemploy(string login, string paswd)
+       /* public void chekemploy(string login, string paswd)//Loginchek
         {
             string sql = "";
             using (SqlConnection connection = new SqlConnection(db_connect))
@@ -36,13 +36,13 @@ namespace Time_Table
         {
 
         }
-    }
+   */ }
     /*
     ExecuteScalar: возвращает один результат (например, MAX(ID)).
     ExecuteNonQuery: используется для вставки, обновления или удаления данных и возвращает количество затронутых строк.
     ExecuteReader: используется для выборки данных и возвращает список строк, где каждая строка представлена словарем с ключами-именами полей и значениями данных.
     */
-    public class DatabaseHelper
+    /*public class DatabaseHelper
     {
         private readonly string _connectionString;
 
@@ -136,6 +136,6 @@ namespace Time_Table
     {
         Console.WriteLine($"Login: {user["login"]}, Password: {user["passwd"]}");
     }
-
+*/
 
 }
