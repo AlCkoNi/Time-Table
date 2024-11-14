@@ -60,9 +60,9 @@
             label12.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label12.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label12.ForeColor = Color.Orange;
-            label12.Location = new Point(441, 9);
+            label12.Location = new Point(280, -2);
             label12.Name = "label12";
-            label12.Size = new Size(961, 25);
+            label12.Size = new Size(961, 62);
             label12.TabIndex = 24;
             label12.Text = "Система управления здравоохранением";
             label12.TextAlign = ContentAlignment.MiddleCenter;
@@ -70,7 +70,7 @@
             // panel4
             // 
             panel4.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            panel4.BackColor = Color.FromArgb(255, 255, 192);
+            panel4.BackColor = Color.White;
             panel4.BorderStyle = BorderStyle.Fixed3D;
             panel4.Controls.Add(textBox9);
             panel4.Controls.Add(label13);
