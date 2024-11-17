@@ -59,5 +59,15 @@ namespace Time_Table.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap explorer_Oo5u5wCFtV {
+            get {
+                object obj = ResourceManager.GetObject("explorer_Oo5u5wCFtV", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

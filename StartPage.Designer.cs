@@ -28,18 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StartPage));
             SuspendLayout();
             // 
             // StartPage
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            AccessibleRole = AccessibleRole.None;
+            AutoScaleMode = AutoScaleMode.None;
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            AutoValidate = AutoValidate.Disable;
+            BackColor = Color.White;
+            BackgroundImage = Properties.Resources.explorer_Oo5u5wCFtV;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(869, 616);
+            ClientSize = new Size(979, 522);
             ControlBox = false;
+            DoubleBuffered = true;
             Name = "StartPage";
+            StartPosition = FormStartPosition.CenterScreen;
+            Load += StartPage_Load;
             ResumeLayout(false);
         }
 
