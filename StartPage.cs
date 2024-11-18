@@ -1,32 +1,39 @@
 ﻿using CRMStom;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using Timer = System.Windows.Forms.Timer;
 
 namespace Time_Table
 {
     public partial class StartPage : Form
     {
         MainMenu mainMenu = new MainMenu();
+        Timer timer = new Timer(); 
         public StartPage()
         {
             InitializeComponent();
-
+            this.Opacity = 0;
+            timer.Interval = 60; 
+            timer.Tick += FadeInTimer_Tick!;
         }
         private void StartPage_Load(object sender, EventArgs e)
         {
-            Wait();
+            timer.Start(); 
+            Wait(); 
+        }
+        private void FadeInTimer_Tick(object sender, EventArgs e)
+        {
+            if (this.Opacity < 1)
+            {
+                this.Opacity += 0.020; 
+            }
+            else
+            {
+                timer.Stop(); 
+            }
         }
         private async void Wait()
         {
             await Task.Delay(5000); 
-            mainMenu.Show();
+            mainMenu.Show(); 
             this.Hide(); 
         }
     }
