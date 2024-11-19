@@ -131,7 +131,7 @@
             button3.ForeColor = Color.White;
             button3.Location = new Point(1458, 262);
             button3.Name = "button3";
-            button3.Size = new Size(231, 75);
+            button3.Size = new Size(245, 75);
             button3.TabIndex = 45;
             button3.Text = "Удалить";
             button3.UseVisualStyleBackColor = false;
@@ -145,7 +145,7 @@
             button2.ForeColor = Color.White;
             button2.Location = new Point(1458, 174);
             button2.Name = "button2";
-            button2.Size = new Size(231, 75);
+            button2.Size = new Size(245, 75);
             button2.TabIndex = 44;
             button2.Text = "Сохранять";
             button2.UseVisualStyleBackColor = false;
@@ -159,7 +159,7 @@
             button1.ForeColor = Color.White;
             button1.Location = new Point(1458, 87);
             button1.Name = "button1";
-            button1.Size = new Size(231, 75);
+            button1.Size = new Size(245, 75);
             button1.TabIndex = 25;
             button1.Text = "Редактировать";
             button1.UseVisualStyleBackColor = false;
