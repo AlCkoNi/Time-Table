@@ -163,6 +163,7 @@
             button1.TabIndex = 25;
             button1.Text = "Редактировать";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // label1
             // 
