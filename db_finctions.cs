@@ -17,7 +17,7 @@ namespace Time_Table
 
         public void chekemploy(string login, string paswd)//Loginchek
         {
-            /*string sql = "";
+            string sql = "";
             using (SqlConnection connection = new SqlConnection(db_connect))
             {
                 connection.Open();
@@ -30,7 +30,7 @@ namespace Time_Table
                     command.Parameters.AddWithValue("@login", login);
                     command.Parameters.AddWithValue("@passwd", paswd);
                 }
-            }*/
+            }
         }
         public void add_to_bd_users(string name, string date_of_birth, int tel_number, string tashxis, decimal discount, string info, string total_amount)
         {

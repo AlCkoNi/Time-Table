@@ -33,7 +33,7 @@ namespace Time_Table
         private async void Wait()
         {
             await Task.Delay(5000); 
-            mainMenu.Show(); 
+            mainMenu.Show();
             this.Hide(); 
         }
     }
