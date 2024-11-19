@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Time_Table;
 
 namespace CRMStom
 {
@@ -16,7 +17,21 @@ namespace CRMStom
         {
             InitializeComponent();
         }
-
+        private void Data1_Add_custom_Click(object sender, EventArgs e)
+        {
+            ShowChildForm();
+        }
+        private void ShowChildForm()
+        {
+            DataADD childForm = new DataADD();
+            childForm.TopLevel = false; // TopLevel-ni false qilib belgilash
+            childForm.FormBorderStyle = FormBorderStyle.None; // Chegarani olib tashlash
+            childForm.Dock = DockStyle.Fill; // Formani Panelga to'liq sig'dirish
+            Asosiy_panel.Controls.Clear(); // Avvalgi kontrollarni o'chirish
+            Asosiy_panel.Controls.Add(childForm); // Panelga qo'shish
+            Asosiy_panel.Tag = childForm;
+            childForm.Show();
+        }
         private void label2_Click(object sender, EventArgs e)
         {
 
@@ -66,5 +81,7 @@ namespace CRMStom
         {//ddscscsc
 
         }
+
+        
     }
 }
