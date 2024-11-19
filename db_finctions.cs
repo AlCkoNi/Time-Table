@@ -34,7 +34,7 @@ namespace Time_Table
         }
         public void add_to_bd_users(string name, string date_of_birth, int tel_number, string tashxis, decimal discount, string info, string total_amount)
         {
-
+            //add new feature
         }
     }
     /*
