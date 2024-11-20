@@ -20,6 +20,7 @@ namespace CRMStom
         private void Data1_Add_custom_Click(object sender, EventArgs e)
         {
             ShowChildForm();
+            Console.WriteLine("alom");
         }
         private void ShowChildForm()
         {
