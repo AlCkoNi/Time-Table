@@ -44,6 +44,18 @@ namespace CRMStom
             Change_panel.Tag = search;
             search.Show();
         }
+
+        private void Settings_btn_Click(object sender, EventArgs e)
+        {
+            Settings settings = new Settings();
+            settings.TopLevel = false;
+            settings.FormBorderStyle = FormBorderStyle.None;
+            settings.Dock = DockStyle.Fill;
+            Change_panel.Controls.Clear();
+            Change_panel.Controls.Add(settings);
+            Change_panel.Tag = settings;
+            settings.Show();
+        }
         private void label2_Click(object sender, EventArgs e)
         {
             Console.WriteLine("salom");
@@ -98,5 +110,7 @@ namespace CRMStom
         {
             Application.Exit();
         }
+
+       
     }
 }

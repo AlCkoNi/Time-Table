@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
             panel1 = new Panel();
-            label2 = new Label();
             chiqish_btn = new Label();
+            label2 = new Label();
             panel2 = new Panel();
             pictureBox3 = new PictureBox();
             Search_btn = new Button();
@@ -40,11 +40,14 @@
             label1 = new Label();
             pictureBox1 = new PictureBox();
             Change_panel = new Panel();
+            Settings_btn = new Button();
+            pictureBox4 = new PictureBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -58,16 +61,6 @@
             panel1.Size = new Size(1874, 40);
             panel1.TabIndex = 0;
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            label2.Location = new Point(787, 9);
-            label2.Name = "label2";
-            label2.Size = new Size(273, 19);
-            label2.TabIndex = 0;
-            label2.Text = "Healthcare Management System";
-            // 
             // chiqish_btn
             // 
             chiqish_btn.AutoSize = true;
@@ -79,9 +72,21 @@
             chiqish_btn.Text = "EXIT";
             chiqish_btn.Click += chiqish_btn_Click;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            label2.Location = new Point(787, 9);
+            label2.Name = "label2";
+            label2.Size = new Size(273, 19);
+            label2.TabIndex = 0;
+            label2.Text = "Healthcare Management System";
+            // 
             // panel2
             // 
             panel2.BackColor = Color.Navy;
+            panel2.Controls.Add(pictureBox4);
+            panel2.Controls.Add(Settings_btn);
             panel2.Controls.Add(pictureBox3);
             panel2.Controls.Add(Search_btn);
             panel2.Controls.Add(pictureBox2);
@@ -168,6 +173,29 @@
             Change_panel.Size = new Size(1624, 880);
             Change_panel.TabIndex = 2;
             // 
+            // Settings_btn
+            // 
+            Settings_btn.FlatAppearance.BorderSize = 0;
+            Settings_btn.FlatStyle = FlatStyle.Flat;
+            Settings_btn.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            Settings_btn.Location = new Point(3, 386);
+            Settings_btn.Name = "Settings_btn";
+            Settings_btn.Size = new Size(247, 52);
+            Settings_btn.TabIndex = 6;
+            Settings_btn.Text = "Settings";
+            Settings_btn.UseVisualStyleBackColor = true;
+            Settings_btn.Click += Settings_btn_Click;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.Location = new Point(13, 386);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(70, 52);
+            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox4.TabIndex = 7;
+            pictureBox4.TabStop = false;
+            // 
             // MainMenu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -193,6 +221,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ResumeLayout(false);
         }
 
@@ -209,5 +238,7 @@
         private PictureBox pictureBox3;
         private Label label2;
         private Label chiqish_btn;
+        private PictureBox pictureBox4;
+        private Button Settings_btn;
     }
 }
