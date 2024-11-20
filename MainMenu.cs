@@ -21,6 +21,7 @@ namespace CRMStom
         {
             ShowChildForm();
             Console.WriteLine("alom");
+            Console.WriteLine("salom");
         }
         private void ShowChildForm()
         {
