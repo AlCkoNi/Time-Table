@@ -6,11 +6,12 @@ namespace Time_Table.db
         private readonly string db_connect = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\AlCkoNi\Source\Repos\Time-Table\db\dbs\db.mdf;Integrated Security=True";
         public class user_info
         {
+            public required int id { get; set; }
             public required string date_to_visit { get; set; }
             public required string name { get; set; }
             public required string date_to_born { get; set; }
             public int tel { get; set; }
-            public byte doxtr{ get; set; }//primary key
+            public byte doxtr { get; set; }//primary key
             public required string tashxis { get; set; }
             public byte skidka { get; set; }
             public required string keldi { get; set; }
@@ -18,31 +19,42 @@ namespace Time_Table.db
         }
         public class doctor_info
         {
-            public required string name { get; set;}
-            public required string info { get; set;}
+            public required string name { get; set; }
+            public required string info { get; set; }
         }
+
         public List<user_info> users = new();
-        public async Task AddUserAsync(user_info user)//добавляет нового пользователя в таблицу Users.
+
+        public async Task add_user_to_db(user_info user)//добавляет нового пользователя в таблицу Users.
         {
-            using (SqlConnection connection = new SqlConnection(db_connect))
+            try
             {
-                using (SqlCommand command = new SqlCommand(search_queries("adduser"), connection))
+                using (SqlConnection connection = new SqlConnection(db_connect))
                 {
-                    command.Parameters.AddWithValue("@date_to_visit", user.date_to_visit);
-                    command.Parameters.AddWithValue("@name", user.name);
-                    command.Parameters.AddWithValue("@date_to_born", user.date_to_born);
-                    command.Parameters.AddWithValue("@tel", user.tel);
-                    command.Parameters.AddWithValue("@doxtr", user.doxtr);
-                    command.Parameters.AddWithValue("@tashxis", user.tashxis);
-                    command.Parameters.AddWithValue("@skidka", user.skidka);
-                    command.Parameters.AddWithValue("@keldi", user.keldi);
-                    command.Parameters.AddWithValue("@obshynarh", user.obshynarh);
-                    await connection.OpenAsync();
-                    await command.ExecuteNonQueryAsync();
+                    using (SqlCommand command = new SqlCommand(search_queries("adduser"), connection))
+                    {
+                        command.Parameters.AddWithValue("@igrtrrttrdd", user.id);
+                        command.Parameters.AddWithValue("@date_to_visit", user.date_to_visit);
+                        command.Parameters.AddWithValue("@name", user.name);
+                        command.Parameters.AddWithValue("@date_to_born", user.date_to_born);
+                        command.Parameters.AddWithValue("@tel", user.tel);
+                        command.Parameters.AddWithValue("@doxtr", user.doxtr);
+                        command.Parameters.AddWithValue("@tashxis", user.tashxis);
+                        command.Parameters.AddWithValue("@skidka", user.skidka);
+                        command.Parameters.AddWithValue("@keldi", user.keldi);
+                        command.Parameters.AddWithValue("@obshynarh", user.obshynarh);
+                        await connection.OpenAsync();
+                        await command.ExecuteNonQueryAsync();
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);throw;
+            }
+            
         }
-        public async Task<List<user_info>> GetUsersAsync()//получает список всех пользователей из таблицы Users.
+        /*public async Task<List<user_info>> GetUsersAsync()//получает список всех пользователей из таблицы Users.
         {
 
             using (SqlConnection connection = new SqlConnection(db_connect))
@@ -72,8 +84,7 @@ namespace Time_Table.db
             }
 
             return users;
-        }
-
+        }*/
         public async Task UpdateUserAsync(user_info user)//UpdateUserAsync – обновляет данные пользователя.
         {
             string query = "UPDATE Users SET date_to_visit = @date_to_visit, name = @name, date_to_born = @date_to_born, " +
@@ -99,7 +110,6 @@ namespace Time_Table.db
                 }
             }
         }
-
         public async Task DeleteUserAsync(byte doxtr)//DeleteUserAsync – удаляет пользователя по его doxtr.
         {
             string query = "DELETE FROM Users WHERE doxtr = @doxtr";
@@ -115,7 +125,6 @@ namespace Time_Table.db
                 }
             }
         }
-
         public async Task AddDoctorAsync(doctor_info doctor)//AddDoctorAsync – добавляет нового врача в таблицу Doctors.
         {
             string query = "INSERT INTO Doctors (name, info) VALUES (@name, @info)";
@@ -132,7 +141,6 @@ namespace Time_Table.db
                 }
             }
         }
-
         public async Task<List<doctor_info>> GetDoctorsAsync()//GetDoctorsAsync – возвращает список врачей.
         {
             string query = "SELECT name, info FROM Doctors";
@@ -159,9 +167,23 @@ namespace Time_Table.db
 
             return doctors;
         }
-        public void fhkjsa()
-        {
-            Console.WriteLine("Hello world");
-        }
     }
+    /*static void Main(string[] args)
+        {
+            db_finctions db = new db_finctions();
+            user_info newUser = new user_info()
+            {
+                id = 1,
+                date_to_visit = "12,12,1002",
+                name = "Иван Иванов",
+                date_to_born = "12,12,12",
+                tel = 1212,
+                doxtr = 1,
+                tashxis = "Примерный диагноз",
+                skidka = 10,
+                keldi = "a",
+                obshynarh = "sadasd"
+            };
+            Task task = db.add_user_to_db(newUser);
+        }*/
 }

@@ -4,7 +4,7 @@
     {
         private readonly Dictionary<string, string> queries = new Dictionary<string, string>()//queries
         {
-            { "adduser", "INSERT INTO Users (date_to_visit, name, date_to_born, tel, doxtr, tashxis, skidka, keldi, obshynarh) VALUES (@date_to_visit, @name, @date_to_born, @tel, @doxtr, @tashxis, @skidka, @keldi, @obshynarh)" },
+            { "adduser", "INSERT INTO Users (id, date_of_visit, name, year_of_birth, tel_number, employes, tashxis, discount, info, total_amount) VALUES (@id, @date_to_visit, @name, @date_to_born, @tel, @doxtr, @tashxis, @skidka, @keldi, @obshynarh)" },
             { "checkuser", "SELECT date_to_visit, name, date_to_born, tel, doxtr, tashxis, skidka, keldi, obshynarh FROM Users" },
             { "DeleteVisitById", "DELETE FROM YourTableName WHERE id = @id" },
             { "UpdateVisitDate", "UPDATE YourTableName SET date_of_visit = @dateOfVisit WHERE id = @id" }
