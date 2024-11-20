@@ -19,7 +19,7 @@ namespace CRMStom
 
         private void label2_Click(object sender, EventArgs e)
         {
-
+            Console.WriteLine("salom");
         }
 
         private void label6_Click(object sender, EventArgs e)
