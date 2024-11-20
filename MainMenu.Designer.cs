@@ -65,7 +65,7 @@
             // 
             // panel2
             // 
-            panel2.BackColor = SystemColors.HotTrack;
+            panel2.BackColor = Color.Navy;
             panel2.Controls.Add(button3);
             panel2.Controls.Add(button2);
             panel2.Controls.Add(Data1_Add_custom);
