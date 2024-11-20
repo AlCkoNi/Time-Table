@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Time_Table.Saydullo_main_menu;
 
 namespace CRMStom
 {
@@ -16,7 +17,33 @@ namespace CRMStom
         {
             InitializeComponent();
         }
+        private void ShowAddForm()
+        {
+            Add childForm = new Add();
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            Change_panel.Controls.Clear();
+            Change_panel.Controls.Add(childForm);
+            Change_panel.Tag = childForm;
+            childForm.Show();
+        }
 
+        private void Add_btn_Click(object sender, EventArgs e)
+        {
+            ShowAddForm();
+        }
+        private void Search_btn_Click(object sender, EventArgs e)
+        {
+            Search search = new Search();
+            search.TopLevel = false;
+            search.FormBorderStyle = FormBorderStyle.None;
+            search.Dock = DockStyle.Fill;
+            Change_panel.Controls.Clear();
+            Change_panel.Controls.Add(search);
+            Change_panel.Tag = search;
+            search.Show();
+        }
         private void label2_Click(object sender, EventArgs e)
         {
             Console.WriteLine("salom");
@@ -65,6 +92,11 @@ namespace CRMStom
         private void button1_Click(object sender, EventArgs e)
         {//ddscscsc
 
+        }
+
+        private void chiqish_btn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
