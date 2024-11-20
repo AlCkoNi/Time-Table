@@ -159,5 +159,9 @@ namespace Time_Table.db
 
             return doctors;
         }
+        public void fhkjsa()
+        {
+            //shdgkajhsd
+        }
     }
 }
