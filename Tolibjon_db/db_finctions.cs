@@ -161,7 +161,7 @@ namespace Time_Table.db
         }
         public void fhkjsa()
         {
-            //asda
+            Console.WriteLine("Hello world");
         }
     }
 }
