@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            dataGridView1 = new DataGridView();
             label1 = new Label();
             panel2 = new Panel();
             button1 = new Button();
@@ -50,10 +51,9 @@
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
-            dataGridView1 = new DataGridView();
             panel1.SuspendLayout();
-            panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -66,6 +66,15 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1537, 412);
             panel1.TabIndex = 0;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(29, 59);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(1477, 323);
+            dataGridView1.TabIndex = 1;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // label1
             // 
@@ -277,14 +286,6 @@
             label2.TabIndex = 0;
             label2.Text = "label2";
             // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(29, 59);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(1477, 323);
-            dataGridView1.TabIndex = 1;
-            // 
             // Add
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -298,9 +299,9 @@
             Text = "Add";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
