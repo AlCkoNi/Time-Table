@@ -92,6 +92,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "Search";
             Text = "Search";
+            Load += Search_Load;
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel1.ResumeLayout(false);

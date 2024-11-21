@@ -33,7 +33,7 @@ namespace Time_Table.db
                 {
                     using (SqlCommand command = new SqlCommand(search_queries("adduser"), connection))
                     {
-                        command.Parameters.AddWithValue("@igrtrrttrdd", user.id);
+                        command.Parameters.AddWithValue("@id", user.id);
                         command.Parameters.AddWithValue("@date_to_visit", user.date_to_visit);
                         command.Parameters.AddWithValue("@name", user.name);
                         command.Parameters.AddWithValue("@date_to_born", user.date_to_born);
@@ -168,22 +168,5 @@ namespace Time_Table.db
             return doctors;
         }
     }
-    /*static void Main(string[] args)
-        {
-            db_finctions db = new db_finctions();
-            user_info newUser = new user_info()
-            {
-                id = 1,
-                date_to_visit = "12,12,1002",
-                name = "Иван Иванов",
-                date_to_born = "12,12,12",
-                tel = 1212,
-                doxtr = 1,
-                tashxis = "Примерный диагноз",
-                skidka = 10,
-                keldi = "a",
-                obshynarh = "sadasd"
-            };
-            Task task = db.add_user_to_db(newUser);
-        }*/
+    
 }

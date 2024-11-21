@@ -30,9 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
             panel1 = new Panel();
-            chiqish_btn = new Label();
-            label2 = new Label();
+            label4 = new Label();
             panel2 = new Panel();
+            pictureBox5 = new PictureBox();
+            button1 = new Button();
+            pictureBox4 = new PictureBox();
+            Settings_btn = new Button();
             pictureBox3 = new PictureBox();
             Search_btn = new Button();
             pictureBox2 = new PictureBox();
@@ -40,51 +43,41 @@
             label1 = new Label();
             pictureBox1 = new PictureBox();
             Change_panel = new Panel();
-            Settings_btn = new Button();
-            pictureBox4 = new PictureBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.White;
-            panel1.Controls.Add(chiqish_btn);
-            panel1.Controls.Add(label2);
+            panel1.Controls.Add(label4);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(1874, 40);
             panel1.TabIndex = 0;
             // 
-            // chiqish_btn
+            // label4
             // 
-            chiqish_btn.AutoSize = true;
-            chiqish_btn.Font = new Font("Tahoma", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            chiqish_btn.Location = new Point(3, 4);
-            chiqish_btn.Name = "chiqish_btn";
-            chiqish_btn.Size = new Size(80, 33);
-            chiqish_btn.TabIndex = 1;
-            chiqish_btn.Text = "EXIT";
-            chiqish_btn.Click += chiqish_btn_Click;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            label2.Location = new Point(787, 9);
-            label2.Name = "label2";
-            label2.Size = new Size(273, 19);
-            label2.TabIndex = 0;
-            label2.Text = "Healthcare Management System";
+            label4.AutoSize = true;
+            label4.Font = new Font("Tahoma", 18F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            label4.ForeColor = Color.DarkOrange;
+            label4.Location = new Point(772, 8);
+            label4.Name = "label4";
+            label4.Size = new Size(399, 29);
+            label4.TabIndex = 0;
+            label4.Text = "Healthcare Management System";
             // 
             // panel2
             // 
             panel2.BackColor = Color.Navy;
+            panel2.Controls.Add(pictureBox5);
+            panel2.Controls.Add(button1);
             panel2.Controls.Add(pictureBox4);
             panel2.Controls.Add(Settings_btn);
             panel2.Controls.Add(pictureBox3);
@@ -98,6 +91,52 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(250, 880);
             panel2.TabIndex = 1;
+            // 
+            // pictureBox5
+            // 
+            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
+            pictureBox5.Location = new Point(13, 807);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(70, 52);
+            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox5.TabIndex = 11;
+            pictureBox5.TabStop = false;
+            // 
+            // button1
+            // 
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            button1.Location = new Point(10, 807);
+            button1.Name = "button1";
+            button1.Size = new Size(247, 52);
+            button1.TabIndex = 10;
+            button1.Text = "Exit";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click_1;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.Location = new Point(13, 386);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(70, 52);
+            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox4.TabIndex = 7;
+            pictureBox4.TabStop = false;
+            // 
+            // Settings_btn
+            // 
+            Settings_btn.FlatAppearance.BorderSize = 0;
+            Settings_btn.FlatStyle = FlatStyle.Flat;
+            Settings_btn.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            Settings_btn.Location = new Point(3, 386);
+            Settings_btn.Name = "Settings_btn";
+            Settings_btn.Size = new Size(247, 52);
+            Settings_btn.TabIndex = 6;
+            Settings_btn.Text = "Settings";
+            Settings_btn.UseVisualStyleBackColor = true;
+            Settings_btn.Click += Settings_btn_Click;
             // 
             // pictureBox3
             // 
@@ -172,29 +211,7 @@
             Change_panel.Name = "Change_panel";
             Change_panel.Size = new Size(1624, 880);
             Change_panel.TabIndex = 2;
-            // 
-            // Settings_btn
-            // 
-            Settings_btn.FlatAppearance.BorderSize = 0;
-            Settings_btn.FlatStyle = FlatStyle.Flat;
-            Settings_btn.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            Settings_btn.Location = new Point(3, 386);
-            Settings_btn.Name = "Settings_btn";
-            Settings_btn.Size = new Size(247, 52);
-            Settings_btn.TabIndex = 6;
-            Settings_btn.Text = "Settings";
-            Settings_btn.UseVisualStyleBackColor = true;
-            Settings_btn.Click += Settings_btn_Click;
-            // 
-            // pictureBox4
-            // 
-            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(13, 386);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(70, 52);
-            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox4.TabIndex = 7;
-            pictureBox4.TabStop = false;
+            Change_panel.Paint += Change_panel_Paint;
             // 
             // MainMenu
             // 
@@ -218,10 +235,11 @@
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ResumeLayout(false);
         }
 
@@ -236,9 +254,10 @@
         private Panel Change_panel;
         private Button Search_btn;
         private PictureBox pictureBox3;
-        private Label label2;
-        private Label chiqish_btn;
+        private Label label4;
         private PictureBox pictureBox4;
         private Button Settings_btn;
+        private PictureBox pictureBox5;
+        private Button button1;
     }
 }

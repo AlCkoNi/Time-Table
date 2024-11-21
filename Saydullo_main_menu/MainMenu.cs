@@ -8,11 +8,33 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Time_Table.Saydullo_main_menu;
+using System.Globalization;
+using System.Resources;
+using System.Threading;
 
 namespace CRMStom
 {
     public partial class MainMenu : Form
     {
+
+
+        public MainMenu(CultureInfo culture)
+        {
+            InitializeComponent();
+
+            Thread.CurrentThread.CurrentCulture = culture;
+            Thread.CurrentThread.CurrentUICulture = culture;
+
+            ResourceManager rm = new ResourceManager("Time-Table.MainMenu", System.Reflection.Assembly.GetExecutingAssembly());
+
+            this.Text = this.Text + " " + DateTime.Now.ToLongDateString();
+
+            label1.Text = rm.GetString("label1.Text");
+            Add_btn.Text = rm.GetString("Add_btn.Text");
+            label4.Text = rm.GetString("label4.Text");
+            Search_btn.Text = rm.GetString("Search_btn.Text");
+            Settings_btn.Text = rm.GetString("Settings_btn.Text");
+        }
         public MainMenu()
         {
             InitializeComponent();
@@ -47,6 +69,7 @@ namespace CRMStom
 
         private void Settings_btn_Click(object sender, EventArgs e)
         {
+            
             Settings settings = new Settings();
             settings.TopLevel = false;
             settings.FormBorderStyle = FormBorderStyle.None;
@@ -58,7 +81,7 @@ namespace CRMStom
         }
         private void label2_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("salom");
+
         }
 
         private void label6_Click(object sender, EventArgs e)
@@ -100,17 +123,25 @@ namespace CRMStom
         {
 
         }
-
         private void button1_Click(object sender, EventArgs e)
-        {//ddscscsc
+        {
 
         }
-
         private void chiqish_btn_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void Change_panel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void button1_Click_1(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
-       
     }
 }
