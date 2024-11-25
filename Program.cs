@@ -1,29 +1,52 @@
+using System.Runtime.InteropServices;
+using Time_Table.db;
+using static Time_Table.db.db_finctions;
 namespace Time_Table
 {
     internal static class Program
     {
-        static void Main()
+        [DllImport("kernel32.dll")]
+        private static extern bool AllocConsole();
+        static async Task Main(string[] args)
         {
-            ApplicationConfiguration.Initialize();
-            Application.Run(new StartPage());
+            AllocConsole();
+            Run_test_class run = new Run_test_class();
+            run.run_func();
         }
-        /*static void Main(string[] args)
+    }
+    public class Run_test_class
+    {
+        db_finctions dbf = new db_finctions();
+        public async Task add()
         {
-            db_finctions db = new db_finctions();
-            user_info newUser = new user_info()
+            user_info newUser = new user_info
             {
-                id = 1,
-                date_to_visit = "12,12,1002",
+                id = 5,
+                date_to_visit = "2024-12-01",
                 name = "Иван Иванов",
-                date_to_born = "12,12,12",
-                tel = 1212,
+                date_to_born = "2000-01-01",
+                tel = 123456789,
                 doxtr = 1,
                 tashxis = "Примерный диагноз",
                 skidka = 10,
-                keldi = "a",
-                obshynarh = "a"
+                keldi = "Да",
+                obshynarh = "Общая информация"
             };
-            Task task = db.add_user_to_db(newUser);
-        }*/
+            await dbf.add_user_to_db(newUser);
+        }
+        public async void run_func()
+        {
+            await add();
+            var allUsers = await dbf.SelectAllUsersAsync();
+
+            foreach (var user in allUsers)
+            {
+                foreach (var column in user)
+                {
+                    Console.Write($" {column.Key}: " + "{" + $"{column.Value}" + "}");
+                }
+                Console.WriteLine("\n---------------");
+            }
+        }
     }
 }

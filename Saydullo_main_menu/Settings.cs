@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
@@ -61,9 +62,9 @@ namespace Time_Table.Saydullo_main_menu
                     ConfigurationManager.AppSettings[key] = "light";
                 }
             }
-            catch(Exception ex) 
+            catch (Exception ex)
             {
-
+                Debug.WriteLine(ex.Message); throw;
             }
         }
 
