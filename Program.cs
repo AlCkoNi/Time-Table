@@ -21,7 +21,7 @@ namespace Time_Table
         {
             user_info newUser = new user_info
             {
-                id = 5,
+                id = 6,
                 date_to_visit = "2024-12-01",
                 name = "Иван Иванов",
                 date_to_born = "2000-01-01",
