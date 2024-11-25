@@ -8,11 +8,11 @@ namespace Time_Table
         [DllImport("kernel32.dll")]
         private static extern bool AllocConsole();
         static async Task Main(string[] args)
-        {
+		{
             AllocConsole();
             Run_test_class run = new Run_test_class();
-            run.run_func();
-        }
+            await run.run_func();
+		}
     }
     public class Run_test_class
     {
@@ -34,7 +34,7 @@ namespace Time_Table
             };
             await dbf.add_user_to_db(newUser);
         }
-        public async void run_func()
+        public async Task run_func()
         {
             await add();
             var allUsers = await dbf.SelectAllUsersAsync();

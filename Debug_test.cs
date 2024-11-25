@@ -5,6 +5,6 @@ namespace Time_Table
 {
     internal class Debug_test
     {
-        
+		
     }
 }
