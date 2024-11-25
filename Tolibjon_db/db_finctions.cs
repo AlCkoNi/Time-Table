@@ -4,7 +4,8 @@ namespace Time_Table.db
 {
     internal class db_finctions : queries_functions
     {
-        private readonly string db_connect = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\AlCkoNi\source\repos\Time-Table\Tolibjon_db\dbs\db.mdf;Integrated Security=True;MultipleActiveResultSets=True";
+        //private readonly string db_connect = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\AlCkoNi\source\repos\Time-Table\Tolibjon_db\dbs\db.mdf;Integrated Security=True;MultipleActiveResultSets=True";
+        private readonly string db_connect = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""C:\Users\AlCkoNi\Documents\Work\Visual Studio Prajact-C#\Time-Table\Tolibjon_db\dbs\db.mdf"";Integrated Security=True";
         public class user_info//переменые user
         {
             public required int id { get; set; }
