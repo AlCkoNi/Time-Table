@@ -32,6 +32,7 @@
             dataGridView1 = new DataGridView();
             label1 = new Label();
             panel2 = new Panel();
+            doctors_select = new ComboBox();
             button1 = new Button();
             dateTimePicker1 = new DateTimePicker();
             textBox8 = new TextBox();
@@ -40,8 +41,7 @@
             textBox5 = new TextBox();
             textBox4 = new TextBox();
             textBox3 = new TextBox();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            name_box = new TextBox();
             label10 = new Label();
             label9 = new Label();
             label8 = new Label();
@@ -88,6 +88,7 @@
             // panel2
             // 
             panel2.BorderStyle = BorderStyle.FixedSingle;
+            panel2.Controls.Add(doctors_select);
             panel2.Controls.Add(button1);
             panel2.Controls.Add(dateTimePicker1);
             panel2.Controls.Add(textBox8);
@@ -96,8 +97,7 @@
             panel2.Controls.Add(textBox5);
             panel2.Controls.Add(textBox4);
             panel2.Controls.Add(textBox3);
-            panel2.Controls.Add(textBox2);
-            panel2.Controls.Add(textBox1);
+            panel2.Controls.Add(name_box);
             panel2.Controls.Add(label10);
             panel2.Controls.Add(label9);
             panel2.Controls.Add(label8);
@@ -113,10 +113,24 @@
             panel2.TabIndex = 1;
             panel2.Paint += panel2_Paint;
             // 
+            // doctors_select
+            // 
+            doctors_select.Enabled = false;
+            doctors_select.Font = new Font("Tahoma", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            doctors_select.FormattingEnabled = true;
+            doctors_select.Items.AddRange(new object[] { "1.Alish", "2.Ahmat" });
+            doctors_select.Location = new Point(201, 101);
+            doctors_select.Name = "doctors_select";
+            doctors_select.Size = new Size(268, 31);
+            doctors_select.TabIndex = 2;
+            doctors_select.Text = " ";
+            doctors_select.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            // 
             // button1
             // 
             button1.BackColor = Color.Navy;
             button1.Font = new Font("Tahoma", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            button1.ForeColor = SystemColors.Control;
             button1.Location = new Point(729, 261);
             button1.Name = "button1";
             button1.Size = new Size(117, 50);
@@ -180,21 +194,16 @@
             textBox3.Size = new Size(268, 30);
             textBox3.TabIndex = 11;
             // 
-            // textBox2
+            // name_box
             // 
-            textBox2.Font = new Font("Tahoma", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            textBox2.Location = new Point(201, 98);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(268, 30);
-            textBox2.TabIndex = 10;
-            // 
-            // textBox1
-            // 
-            textBox1.Font = new Font("Tahoma", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            textBox1.Location = new Point(201, 33);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(268, 30);
-            textBox1.TabIndex = 9;
+            name_box.Font = new Font("Tahoma", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            name_box.Location = new Point(201, 33);
+            name_box.Name = "name_box";
+            name_box.Size = new Size(268, 30);
+            name_box.TabIndex = 9;
+            name_box.Text = "Name";
+            name_box.TextAlign = HorizontalAlignment.Center;
+            name_box.TextChanged += name_box_TextChanged;
             // 
             // label10
             // 
@@ -324,8 +333,7 @@
         private TextBox textBox5;
         private TextBox textBox4;
         private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox name_box;
         private Label label10;
         private Label label9;
         private Label label8;
@@ -333,5 +341,6 @@
         private Label label6;
         private Label label5;
         private DataGridView dataGridView1;
+        private ComboBox doctors_select;
     }
 }

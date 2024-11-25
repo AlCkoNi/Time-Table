@@ -60,5 +60,15 @@ namespace Time_Table.Saydullo_main_menu
         {
 
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)//doctor choise 
+        {
+
+        }
+
+        private void name_box_TextChanged(object sender, EventArgs e)//name box
+        {
+
+        }
     }
 }
