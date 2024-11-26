@@ -10,7 +10,6 @@ namespace Time_Table
             db_finctions dbf = new db_finctions();
             public async Task run_func()
             {
-                await dbf.delate_doxtr(2);
                 var allUsers = await dbf.doxtr_wive();
                 foreach (var user in allUsers)
                 {

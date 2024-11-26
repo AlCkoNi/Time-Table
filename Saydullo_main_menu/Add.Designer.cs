@@ -34,10 +34,10 @@
             panel2 = new Panel();
             doctors_select = new ComboBox();
             button1 = new Button();
-            dateTimePicker1 = new DateTimePicker();
+            dateofbirth = new DateTimePicker();
             textBox8 = new TextBox();
             textBox7 = new TextBox();
-            textBox6 = new TextBox();
+            tel = new TextBox();
             textBox5 = new TextBox();
             textBox4 = new TextBox();
             textBox3 = new TextBox();
@@ -72,8 +72,10 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(29, 59);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.ScrollBars = ScrollBars.Vertical;
             dataGridView1.Size = new Size(1477, 323);
             dataGridView1.TabIndex = 1;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // label1
             // 
@@ -90,10 +92,10 @@
             panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(doctors_select);
             panel2.Controls.Add(button1);
-            panel2.Controls.Add(dateTimePicker1);
+            panel2.Controls.Add(dateofbirth);
             panel2.Controls.Add(textBox8);
             panel2.Controls.Add(textBox7);
-            panel2.Controls.Add(textBox6);
+            panel2.Controls.Add(tel);
             panel2.Controls.Add(textBox5);
             panel2.Controls.Add(textBox4);
             panel2.Controls.Add(textBox3);
@@ -118,12 +120,10 @@
             doctors_select.Enabled = false;
             doctors_select.Font = new Font("Tahoma", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
             doctors_select.FormattingEnabled = true;
-            doctors_select.Items.AddRange(new object[] { "1.Alish", "2.Ahmat" });
             doctors_select.Location = new Point(201, 101);
             doctors_select.Name = "doctors_select";
             doctors_select.Size = new Size(268, 31);
             doctors_select.TabIndex = 2;
-            doctors_select.Text = "0.Alisher";
             doctors_select.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // button1
@@ -139,13 +139,14 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
-            // dateTimePicker1
+            // dateofbirth
             // 
-            dateTimePicker1.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            dateTimePicker1.Location = new Point(729, 32);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(268, 27);
-            dateTimePicker1.TabIndex = 17;
+            dateofbirth.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            dateofbirth.Location = new Point(729, 32);
+            dateofbirth.Name = "dateofbirth";
+            dateofbirth.Size = new Size(268, 27);
+            dateofbirth.TabIndex = 17;
+            dateofbirth.ValueChanged += dateTimePicker1_ValueChanged;
             // 
             // textBox8
             // 
@@ -154,6 +155,7 @@
             textBox8.Name = "textBox8";
             textBox8.Size = new Size(268, 30);
             textBox8.TabIndex = 16;
+            textBox8.TextChanged += textBox8_TextChanged;
             // 
             // textBox7
             // 
@@ -162,14 +164,16 @@
             textBox7.Name = "textBox7";
             textBox7.Size = new Size(268, 30);
             textBox7.TabIndex = 15;
+            textBox7.TextChanged += textBox7_TextChanged;
             // 
-            // textBox6
+            // tel
             // 
-            textBox6.Font = new Font("Tahoma", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            textBox6.Location = new Point(1238, 33);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(268, 30);
-            textBox6.TabIndex = 14;
+            tel.Font = new Font("Tahoma", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            tel.Location = new Point(1238, 33);
+            tel.Name = "tel";
+            tel.Size = new Size(268, 30);
+            tel.TabIndex = 14;
+            tel.TextChanged += textBox6_TextChanged;
             // 
             // textBox5
             // 
@@ -178,6 +182,7 @@
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(268, 30);
             textBox5.TabIndex = 13;
+            textBox5.TextChanged += textBox5_TextChanged;
             // 
             // textBox4
             // 
@@ -186,6 +191,7 @@
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(268, 30);
             textBox4.TabIndex = 12;
+            textBox4.TextChanged += textBox4_TextChanged;
             // 
             // textBox3
             // 
@@ -194,6 +200,7 @@
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(268, 30);
             textBox3.TabIndex = 11;
+            textBox3.TextChanged += textBox3_TextChanged;
             // 
             // name_box
             // 
@@ -303,8 +310,8 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1612, 880);
-            Controls.Add(panel2);
             Controls.Add(panel1);
+            Controls.Add(panel2);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Add";
             RightToLeft = RightToLeft.No;
@@ -327,10 +334,10 @@
         private Label label3;
         private Label label2;
         private Button button1;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dateofbirth;
         private TextBox textBox8;
         private TextBox textBox7;
-        private TextBox textBox6;
+        private TextBox tel;
         private TextBox textBox5;
         private TextBox textBox4;
         private TextBox textBox3;
