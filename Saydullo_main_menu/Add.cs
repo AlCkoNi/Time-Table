@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Globalization;
-using System.Linq;
+﻿using System.Globalization;
 using System.Resources;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using Time_Table.db;
+using static Time_Table.db.db_finctions;
 
 namespace Time_Table.Saydullo_main_menu
 {
@@ -69,6 +62,29 @@ namespace Time_Table.Saydullo_main_menu
         private void name_box_TextChanged(object sender, EventArgs e)//name box
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            addtodb();
+        }
+        public async Task addtodb()
+        {
+            db_finctions dbf = new db_finctions();
+            user_info newUser = new user_info
+            {
+                id = 5,
+                date_to_visit = "2024-12-01",
+                name = "KALIVAN",
+                date_to_born = "2000-01-01",
+                tel = 123456789,
+                doxtr = 1,
+                tashxis = "Примерный диагноз",
+                skidka = 10,
+                keldi = "Да",
+                obshynarh = "Общая информация"
+            };
+            await dbf.add_user_to_db(newUser);
         }
     }
 }

@@ -123,7 +123,7 @@
             doctors_select.Name = "doctors_select";
             doctors_select.Size = new Size(268, 31);
             doctors_select.TabIndex = 2;
-            doctors_select.Text = " ";
+            doctors_select.Text = "0.Alisher";
             doctors_select.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // button1
@@ -137,6 +137,7 @@
             button1.TabIndex = 18;
             button1.Text = "Add";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // dateTimePicker1
             // 
